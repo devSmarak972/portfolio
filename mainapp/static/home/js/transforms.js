@@ -86,10 +86,10 @@ bomb.addEventListener("click", function () {
 
         bomb.style.background = "#fff";
         console.log(screen.width);
-        if (i > 25 && (i - 25) * 35 + 0.24 * screen.width < screen.width) {
+        if (i > 25 && (i - 25) * 45 + 0.14 * screen.width < screen.width) {
           bomb.style.transform =
             "translateX(-" +
-            (i - 25) * 35 +
+            (i - 25) * 45 +
             "px)" +
             "rotate(-" +
             j * 10 +
@@ -113,15 +113,12 @@ bomb.addEventListener("click", function () {
           cover.style.top = "0";
           cover.style.right = "0";
           cover.style.borderRadius = "0";
+
           flag = false;
+          bomb.style.left = "5%";
           if (j % 36 !== 0) {
             bomb.style.transform =
-              "translateX(-" +
-              (i - 25) * 35 +
-              "px)" +
-              "rotate(-" +
-              Math.ceil(j / 36) * 36 * 10 +
-              "deg)";
+              "rotate(-" + Math.ceil(j / 36) * 36 * 10 + "deg)";
             j = Math.ceil(j / 36) * 36;
           }
           var icon = bomb.querySelector(".icon");
@@ -152,6 +149,7 @@ bomb.addEventListener("click", function () {
       cover.style.height = 0;
       cover.style.width = 0;
       cover.style.transition = "height,width 3s ease";
+      bomb.style.left = "";
 
       // }
       // var before = document.querySelector(".bomb").style.setProperty("--display","none");
@@ -193,14 +191,13 @@ bomb.addEventListener("click", function () {
     }, time);
   }
 });
-window.addEventListener("resize", event => {
-  console.log(open);
-  if (open) {
-    console.log("here");
-    bomb.style.transform =
-      "translateX(-" + screen.width * 0.76 + "px)" + " rotate(-360deg)";
-  }
-});
+// window.addEventListener("resize", event => {
+//   console.log(open);
+//   if (open) {
+//     console.log("here");
+//     bomb.style.left
+//   }
+// });
 
 var grid;
 $(document).ready(function () {
