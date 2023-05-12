@@ -44,9 +44,12 @@ ul {
 }
 
 .content-width {
-    max-width: 770px;
+    /* max-width: 770px; */
     width: 100%;
     /* margin-left: auto; */
+}
+.skills-content{
+    max-width: 770px;
 }
 
 .theme-btn {
@@ -1107,16 +1110,16 @@ transition: color,background 0.5s ease;
 }
 
 .portfolio-items .portfolio-item .portfolio-item-inner {
-    height: 370px;
+    height: 520px;
     overflow: hidden;
     border-radius: 30px;
     position: relative;
     margin-bottom: 30px;
 }
 
-.portfolio-items .portfolio-item.portfolio-full .portfolio-item-inner {
+/* .portfolio-items .portfolio-item.portfolio-full .portfolio-item-inner {
     height: 410px;
-}
+} */
 
 .portfolio-items .portfolio-item .portfolio-item-inner img {
     display: block;
@@ -2226,3 +2229,6 @@ transition: color,background 0.5s ease;
     top: 15px;
     font-size: 1.6rem;
 }
+/* .single-portfolio{
+    transition:display 1.5s ease-out;
+} */

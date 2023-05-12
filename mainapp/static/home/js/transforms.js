@@ -31,7 +31,7 @@ window.addEventListener("scroll", () => {
   //    const maxScrollTop = html.scrollHeight - window.innerHeight;
   //    const scrollFraction = scrollTop / maxScrollTop;
   resume = document.querySelector(".resume-area");
-  if (scrollTop > 1030 && scrollTop < 2100) {
+  if (scrollTop > 1030 && scrollTop < 2800) {
     resume.style.background = "white";
     headers = resume.querySelectorAll("h1, h2, h3, h4");
     headers = [...headers];
@@ -128,12 +128,18 @@ bomb.addEventListener("click", function () {
           icon.classList.remove("la-bars");
           icon.classList.add("la-times");
           icon.style.top = "24px";
+          icon.style.color = "black";
+
+          var port = document.getElementById("section-portfolio");
+          port.style.display = "block";
           clearInterval(openInterval);
         }
       }
     }, time);
   } else {
     const closeInterval = setInterval(function () {
+      var port = document.getElementById("section-portfolio");
+      port.style.display = "none";
       open = false;
       // console.log("here", i);
       console.log("i,j", i, j);
@@ -180,6 +186,7 @@ bomb.addEventListener("click", function () {
         icon.classList.add("la-bars");
         icon.classList.remove("la-times");
         icon.style.top = "15px";
+        icon.style.color = "white";
 
         clearInterval(closeInterval);
       }
@@ -191,7 +198,6 @@ var grid;
 $(document).ready(function () {
   if (document.getElementById("section-portfolio")) {
     console.log("here");
-   
   }
   console.log("in");
   $(".filters ul li").click(function () {
@@ -200,11 +206,10 @@ $(document).ready(function () {
 
     var data = $(this).attr("data-filter");
     console.log(data, "port");
-    var items=document.querySelectorAll(".single-portfolio")
-    items.forEach(el=>{
-      if(el.classList.contains(data.substring(1)))el.style.display="block";
-      else
-      el.style.display="none";
-    })
+    var items = document.querySelectorAll(".single-portfolio");
+    items.forEach(el => {
+      if (el.classList.contains(data.substring(1))) el.style.display = "block";
+      else el.style.display = "none";
+    });
   });
 });
