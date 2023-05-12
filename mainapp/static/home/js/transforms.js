@@ -86,7 +86,7 @@ bomb.addEventListener("click", function () {
 
         bomb.style.background = "#fff";
         console.log(screen.width);
-        if (i > 25 && (i - 25) * 35 + 0.14 * screen.width < screen.width) {
+        if (i > 25 && (i - 25) * 35 + 0.24 * screen.width < screen.width) {
           bomb.style.transform =
             "translateX(-" +
             (i - 25) * 35 +
@@ -191,6 +191,14 @@ bomb.addEventListener("click", function () {
         clearInterval(closeInterval);
       }
     }, time);
+  }
+});
+window.addEventListener("resize", event => {
+  console.log(open);
+  if (open) {
+    console.log("here");
+    bomb.style.transform =
+      "translateX(-" + screen.width * 0.76 + "px)" + " rotate(-360deg)";
   }
 });
 

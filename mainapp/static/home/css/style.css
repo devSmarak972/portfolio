@@ -2232,3 +2232,7 @@ transition: color,background 0.5s ease;
 /* .single-portfolio{
     transition:display 1.5s ease-out;
 } */
+.img-pop-up .middle{
+    position: fixed;
+    display:none;
+}
